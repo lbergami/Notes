@@ -1,6 +1,6 @@
 # Data Warehouse summary notes 
 
-
+&nbsp;
 
 ## Data Warehousing general concepts 
 
@@ -12,11 +12,11 @@
       
 * There are a few rules to follow when we build a DW.
 
-
+&nbsp;
 
 ## Data Warehouse architecture 
 
-
+&nbsp;
 
 1. Different approach between *centralized DW* Vs *component-based DW*: 
 
@@ -28,7 +28,7 @@
 | Lower data governace efforts | 
 | More appropriate for Big Data | 
 
-
+&nbsp;
 
 2. ETL Vs ELT
 
@@ -36,7 +36,7 @@
     * ETL (traditional): data are loaded in their finished and transformed state
     * ELT: Transformation capacity is increased, exploiting cloud platform. You are not committed to the hardware footprint
 
-
+&nbsp;
  
 3. Staging
 
