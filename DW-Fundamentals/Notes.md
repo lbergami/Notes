@@ -116,7 +116,7 @@ There are two different approaches to a DW architecture
       | Transaction-grained | Record from a transaction |
       | Periodic snapshot | Track a given measurement at a regular interval  |
       | Accumulating snapshots | Track the progress of a business process through formally defined stages |
-      | Factless fact | * Record the occurrence of a transaction that has no measurements <br/> * Record coverage or eligibility relationships`
+      | Factless fact | * Record the occurrence of a transaction that has no measurements <br/> * Record coverage or eligibility relationships
 
     * Transaction-grained fact tables
       * tables where we store facts from our transactions  
@@ -132,17 +132,34 @@ There are two different approaches to a DW architecture
       * They take and record regular periodic measurements and there are 2 main types:
         1. Fact tables that aggregate results of regular transactions (e.g. EoW account balances, starting from a daily transaction fact tables).
            These tables are created to have access to an easier version of the grained transaction fact table to answer certain types of business questions more directly 
-        3. Fact tables whose levels are not related to regular transactions. These levels just exsist and can be measured  
+        2. Fact tables whose levels are not related to regular transactions. These levels just exsist and can be measured
 
+    * Accumulating snapshots
+      * They let rack the progress of a business process, keeping track of (i) the elapsed time spent in each phase (incl. both completed and in-progress phases), and (ii)
+        other measurements as process proceeds
+      * They also introduce the concept of multiple relationships from a fact table to a single dimension table
+      * Example: number of days elapsed in between each phase of a finacial aid application process [[ Add picture ]]
+     
+     * Factless tables - there are two different types:
+       1. Record occurence of transactions that have no measurements:
+         * The "measurement" is actually the occurence of the event, i.e. presence of a row in the (factless) table
+         * Only include PK/FK columns or in some times a *tracking fact* filed - a flag with value 1
+         * So they are created to *count()* the row or *sum()* the tracking values
+      2. Record a particular relationship or association among multiple parties, even if no transactions actually occur
+         * Typically (but not always) between a starting and ending date or time [[ Add example ]]
+        
+     * [[ADD comparison between STAR VS SNOWFLAKE schemas fact tables ]]   
 
+<p> <br>
 
+**7. Managing DW history through changing dimensions (SCDs)**
 
+* SCDs are multiple techniques used to manage hisotry within data warehouses, based on various historical data policies
+* SCDs enable DWs to appropriately manage history regardless of policies in transactional applications
+* Three are the most common SCD Types
 
-
-
-
-
-
-
-
-
+| SCD | Description | Description |
+| -------- | ------- | ------- |
+| 1 | SCD overwriting old data, no history retention | * It replaces old values with new ones <br/> * Same rows and columns in the DB table <br/> * Common use case: correcting errros  
+| 2 | SCD maintainig unlimited history | * Existing rows remain as they are <br/> * New row added to the dimensional table <br/> * New row reflects the current state of all the attributes <br/> * Complications with reporting analytics  
+| 3 | SCD maintainig unlimited history | Add a new column, ending up with a "old value column" and a "new value column"
