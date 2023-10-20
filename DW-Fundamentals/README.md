@@ -97,11 +97,29 @@ There are two different approaches to a DW architecture
   * There are two fundamentals key types: (i) *Primary* Vs *Foreign* keys; (ii) *Natural* Vs *Surrogate* keys
     * Primary Key: unique identifier for each row in a BD table. Could be a single column (field) or it may require more than one field
     * Foreign Key: some 'other' table primary key. Used to indicate logical relationship helping data integration and query performances
-    * Natural keys & surrogate keys: Natural keys belong to the source systems, and they travel to the DW with the rest of the data. However, in DW, it is best practice to       use surrogate keys. However, in DW, it is best practice to use surrogate keys as primary/foreign keys to relate data across tables. Surrogate keys do not have     
-      business meaning and they are generated in the DW enviroment.   
+    * Natural keys & surrogate keys: Natural keys belong to the source systems, and they travel to the DW with the rest of the data. However, in DW, it is best practice to       use surrogate keysas primary/foreign keys to relate data across tables. Surrogate keys do not have business meaning and they are generated in the DW enviroment.   
 
+* Design facts and dimensions in fact tables and dimension tables
 
-
+  1. Dimension tables
+     * Key DW subject areas that provides context to measurements
+     * One-stop shopping for all dimensional subjects
+     * In a snowflake schema:
+       * 1 table for each level of hierachy
+       * Every non-terminal dimension has a primary-surrogate key and a next-higher level primary-surrogate key as a foreign key
+       * Every terminal dimension has a primary-surrogate key but not foreign key, since there aren't further dimensions at a higher schema
+      
+  2. Fact tables
+     * There are different types of fact tables
+       | Fact table type | Usage |
+       | -------- | ------- |
+       | Transaction fact tables | Record from a transaction |
+       | Periodic snapshot fact tables  | Track a given measurement at a regular interval  |
+       | Accumulating snapshots fact tables | Track the progress of a business process through formally defined stages |
+       | Factless fact tables | Record the occurrence of a transaction that has no measurements 
+    * It is possible to store two ore more facts in the same table only if the following rules apply:
+      1. Facts are avaialble at the same level of granularity (i.e. same level of detail)
+      2. Facts occurr simultaneosly 
     
 
 
