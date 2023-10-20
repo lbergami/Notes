@@ -71,7 +71,31 @@ There are two different approaches to a DW architecture
 **5. Data warehousing design**
 
 * Data dimensionality refers to organize data by measurements and then filter and group data by context
-* In a DW setting, when we talk about measurements, we refer to **facts** and dimensional context as **dimensions** 
+* In a DW setting, when we talk about measurements, we refer to **facts** and dimensional context as **dimensions**
+  
+| Facts | Dimensions |
+| -------- | ------- |
+| Numeric and quantifiable| Context and attributes of facts |
+| Measurements and metrics  | Included in dimensional tables  |
+| Included in fact tables |
+| Facts can be additive, non-additive, semi-additive |
+
+* There are two different approaches to implement facts and dimension data: Star schema Vs Snowflake schema. Star and Snowflake schemas share
+  the same dimensions but they are materialized with different dimension table representations  
+
+| Star Schema | Snowfalke Schema |
+| -------- | ------- |
+| All dimensions along a given hierarchy is one dimension table | Each dimension/dimentional level in its own table |
+| Only one level away from the fact table along each hierarchy | One or more levels away from fact tables among each hierarchy |
+| Dimension tables organized as a star around fact tables | Dimension tables organized as a snowflake around fact tables |
+| Overall fewer database joins | Overall more joins required |
+| Primary & foreign key relationships straightforward | Primary & foreign key relationships more complex |
+| More storage space required: more repetitive data (denormalized approach) | less storage space required: less repetitive data (normalized approach) |
+
+
+
+
+
     
 
 
