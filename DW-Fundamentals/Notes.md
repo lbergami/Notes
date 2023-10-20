@@ -91,7 +91,7 @@ There are two different approaches to a DW architecture
 | More storage space required: more repetitive data (denormalized approach) | less storage space required: less repetitive data (normalized approach) |
 
 * Database keys
-  * they represent the logical relationships to relate data across different tables.
+  * They represent the logical relationships to relate data across different tables.
   * There are two fundamentals key types: (i) *Primary* Vs *Foreign* keys; (ii) *Natural* Vs *Surrogate* keys
     * Primary Key: unique identifier for each row in a BD table. Could be a single column (field) or it may require more than one field
     * Foreign Key: some 'other' table primary key. Used to indicate logical relationship helping data integration and query performances
