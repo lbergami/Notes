@@ -38,7 +38,10 @@
 
   * First stop of a DW and landing zone of data sources. The staging layer feeds into user access layer in a form that is accessible for further work.
 
-  * Staging has one-to-one relationship with data sources
+  * Staging has one-to-one relationship with data sources (which may come from different vendors)
+    
+  * Staging can be persistent Vs non-persistent (data stage layers are erased when are added to the user access layer), i.e. less storage space but potential data quality issues
+
   *  
 
 
