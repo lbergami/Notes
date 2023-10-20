@@ -135,7 +135,7 @@ There are two different approaches to a DW architecture
         2. Fact tables whose levels are not related to regular transactions. These levels just exsist and can be measured
 
     * Accumulating snapshots
-      * They let rack the progress of a business process, keeping track of (i) the elapsed time spent in each phase (incl. both completed and in-progress phases), and (ii)
+      * They track the progress of a business process, keeping track of (i) the elapsed time spent in each phase (incl. both completed and in-progress phases), and (ii)
         other measurements as process proceeds
       * They also introduce the concept of multiple relationships from a fact table to a single dimension table
       * Example: number of days elapsed in between each phase of a finacial aid application process [[ Add picture ]]
