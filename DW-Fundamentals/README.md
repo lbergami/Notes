@@ -1,6 +1,6 @@
 # Data Warehouse summary notes 
 
-&nbsp;
+<p> <br>
 
 ## Data Warehousing general concepts 
 
@@ -12,14 +12,15 @@
       
 * There are a few rules to follow when we build a DW.
 
-&nbsp;
+<p> <br>
 
 ## Data Warehouse architecture 
 
+<p> <br>
 
 **1. Centralized DW Vs Component-based DW**
 
-* Two different approaches to a DW architecture
+There are two different approaches to a DW architecture
 
 | centralized DW | component-based DW |
 | -------- | ------- |
@@ -36,6 +37,7 @@
     * ETL (traditional): data are loaded in their finished and transformed state
     * ELT: Transformation capacity is increased, exploiting cloud platform. You are not committed to the hardware footprint
 
+<p> <br>
  
 **3. Staging**
 
@@ -51,6 +53,7 @@
       * Complete replacement
       * Rolling append: Set out a time window and those observations that are outside that are dropped
    
+<p> <br>
 
 **4. Data Transformation**
 
@@ -62,6 +65,8 @@
     * Deduplications
     * Vertical and horizontal slicing when only certain information is relevant for analytical purposes
     * Correct potential known errors
+
+<p> <br>
  
 **5. Data warehousing design**
 
