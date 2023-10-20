@@ -116,8 +116,33 @@ There are two different approaches to a DW architecture
       | Transaction-grained | Record from a transaction |
       | Periodic snapshot | Track a given measurement at a regular interval  |
       | Accumulating snapshots | Track the progress of a business process through formally defined stages |
-      | Factless fact tables | `Record the occurrence of a transaction that has no measurements`<br/>`Record coverage or eligibility relationships`
-    
-    * It is possible to store two ore more facts in the same table only if the following rules apply:
-      1. Facts are avaialble at the same level of granularity (i.e. same level of detail)
-      2. Facts occurr simultaneosly 
+      | Factless fact | * Record the occurrence of a transaction that has no measurements <br/> * Record coverage or eligibility relationships`
+
+    * Transaction-grained fact tables
+      * tables where we store facts from our transactions  
+      * It is possible to store two ore more facts in the same table only if the following rules apply:
+        1. Facts are avaialble at the same level of granularity (i.e. same level of detail)
+        2. Facts occurr simultaneosly
+      * Primary keys for fact tables work differently from dimension tables:
+        * PK is defined as unique identifier for each row in a DB table, as in a dimension table
+        * However it is created as the combination of all foreign keys relating back to dimension tables, even if the fact table has a natual key
+        * So in a fact table, fields that are designed as PK are also FK
+       
+    * Periodic snapshot fact tables
+      * They take and record regular periodic measurements and there are 2 main types:
+        1. Fact tables that aggregate results of regular transactions (e.g. EoW account balances, starting from a daily transaction fact tables).
+           These tables are created to have access to an easier version of the grained transaction fact table to answer certain types of business questions more directly 
+        3. Fact tables whose levels are not related to regular transactions. These levels just exsist and can be measured  
+
+
+
+
+
+
+
+
+
+
+
+
+
