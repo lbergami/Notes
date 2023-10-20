@@ -142,11 +142,11 @@ There are two different approaches to a DW architecture
      
      * Factless tables - there are two different types:
        1. Record occurence of transactions that have no measurements:
-         * The "measurement" is actually the occurence of the event, i.e. presence of a row in the (factless) table
-         * Only include PK/FK columns or in some times a *tracking fact* filed - a flag with value 1
-         * So they are created to *count()* the row or *sum()* the tracking values
+           * The "measurement" is actually the occurence of the event, i.e. presence of a row in the (factless) table
+           * Only include PK/FK columns or in some times a *tracking fact* filed - a flag with value 1
+           * So they are created to *count()* the row or *sum()* the tracking values
        2. Record a particular relationship or association among multiple parties, even if no transactions actually occur
-         * Typically (but not always) between a starting and ending date or time [[ Add example ]]
+           * Typically (but not always) between a starting and ending date or time [[ Add example ]]
         
      * [[ADD comparison between STAR VS SNOWFLAKE schemas fact tables ]]   
 
