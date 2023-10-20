@@ -17,6 +17,7 @@
 ## Data Warehouse architecture 
 
 
+
 1. Different approach between *centralized DW* Vs *component-based DW*: 
 
 
@@ -28,11 +29,14 @@
 | More appropriate for Big Data | 
 
 
+
 2. ETL Vs ELT
 
 * The difference between the two workflows is the order of the transformation.
     * ETL (traditional): data are loaded in their finished and transformed state
     * ELT: Transformation capacity is increased, exploiting cloud platform. You are not committed to the hardware footprint
+
+
  
 3. Staging
 
