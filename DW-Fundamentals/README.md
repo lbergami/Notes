@@ -1,4 +1,4 @@
-# Data Warehouse summary notes 
+# Data Warehouse fundamentals summary notes 
 
 <p> <br>
 
@@ -92,7 +92,13 @@ There are two different approaches to a DW architecture
 | Primary & foreign key relationships straightforward | Primary & foreign key relationships more complex |
 | More storage space required: more repetitive data (denormalized approach) | less storage space required: less repetitive data (normalized approach) |
 
-
+* Database keys
+  * they represent the logical relationships to relate data across different tables.
+  * There are two fundamentals key types: (i) *Primary* Vs *Foreign* keys; (ii) *Natural* Vs *Surrogate* keys
+    * Primary Key: unique identifier for each row in a BD table. Could be a single column (field) or it may require more than one field
+    * Foreign Key: some 'other' table primary key. Used to indicate logical relationship helping data integration and query performances
+    * Natural keys & surrogate keys: Natural keys belong to the source systems, and they travel to the DW with the rest of the data. However, in DW, it is best practice to       use surrogate keys. However, in DW, it is best practice to use surrogate keys as primary/foreign keys to relate data across tables. Surrogate keys do not have     
+      business meaning and they are generated in the DW enviroment.   
 
 
 
