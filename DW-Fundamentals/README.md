@@ -1,3 +1,3 @@
-#### Repo containing summary notes on data warehouse concepts 
+Repo containing summary notes on data warehouse concepts 
 
 
