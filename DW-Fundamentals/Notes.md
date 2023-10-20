@@ -116,7 +116,7 @@ There are two different approaches to a DW architecture
       | Transaction-grained | Record from a transaction |
       | Periodic snapshot | Track a given measurement at a regular interval  |
       | Accumulating snapshots | Track the progress of a business process through formally defined stages |
-      | Factless fact tables | Record the occurrence of a transaction that has no measurements
+      | Factless fact tables | `Record the occurrence of a transaction that has no measurements`<br/>`Record coverage or eligibility relationships`
     
     * It is possible to store two ore more facts in the same table only if the following rules apply:
       1. Facts are avaialble at the same level of granularity (i.e. same level of detail)
