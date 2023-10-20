@@ -1,6 +1,7 @@
 # Data Warehouse summary notes 
 
 
+
 ## Data Warehousing general concepts 
 
 * DB and WH are not the same thing. A DW is written on top of a DB, so *usage* Vs *platform*.
@@ -12,7 +13,9 @@
 * There are a few rules to follow when we build a DW.
 
 
+
 ## Data Warehouse architecture 
+
 
 1. Different approach between *centralized DW* Vs *component-based DW*: 
 
@@ -23,6 +26,19 @@
 | One-stop shopping: Single DW where all your data sources feed in  | It may create inconsistencies across data  |
 | Lower data governace efforts | 
 | More appropriate for Big Data | 
-     
+
+
+2. ETL Vs ELT
+
+* The difference between the two workflows is the order of the transformation.
+    * ETL (traditional): data are loaded in their finished and transformed state
+    * ELT: Transformation capacity is increased, exploiting cloud platform. You are not committed to the hardware footprint
+ 
+3. Staging
+
+  * First stop of a DW and landing zone of data sources. The staging layer feeds into user access layer in a form that is accessible for further work.
+
+  * Staging has one-to-one relationship with data sources
+  *  
 
 
