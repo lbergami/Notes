@@ -117,9 +117,9 @@ There are two different approaches to a DW architecture
        | Periodic snapshot fact tables  | Track a given measurement at a regular interval  |
        | Accumulating snapshots fact tables | Track the progress of a business process through formally defined stages |
        | Factless fact tables | Record the occurrence of a transaction that has no measurements 
-    * It is possible to store two ore more facts in the same table only if the following rules apply:
-      1. Facts are avaialble at the same level of granularity (i.e. same level of detail)
-      2. Facts occurr simultaneosly 
+      * It is possible to store two ore more facts in the same table only if the following rules apply:
+        1. Facts are avaialble at the same level of granularity (i.e. same level of detail)
+        2. Facts occurr simultaneosly 
     
 
 
