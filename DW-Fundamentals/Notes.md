@@ -20,7 +20,7 @@
 
 There are two different approaches to a DW architecture
 
-| centralized DW | component-based DW |
+| Centralized DW | Component-based DW |
 | -------- | ------- |
 | Default option | Overcome org challenges but more complext to cross integrate different components |
 | One-stop shopping: Single DW where all your data sources feed in  | It may create inconsistencies across data  |
@@ -131,14 +131,17 @@ There are two different approaches to a DW architecture
       | Factless fact | * Record the occurrence of a transaction that has no measurements <br/> * Record coverage or eligibility relationships
 
     * Transaction-grained fact tables
-      * tables where we store facts from our transactions  
+      * Literally they are the tables where we store facts from our transactions. From a formal POV, they are defined as transaction-**grained** fact tables, because at the grain that defines the fact table  
       * It is possible to store two ore more facts in the same table only if the following rules apply:
         1. Facts are avaialble at the same level of granularity (i.e. same level of detail)
         2. Facts occurr simultaneosly
       * Primary keys for fact tables work differently from dimension tables:
-        * PK is defined as unique identifier for each row in a DB table, as in a dimension table
-        * However it is created as the combination of all foreign keys relating back to dimension tables, even if the fact table has a natual key
-        * So in a fact table, fields that are designed as PK are also FK
+        * A PK is defined as unique identifier for each row in a DB table, as in a dimension table
+        * However, it is created as the combination of all foreign keys relating back to dimension tables (which by definition are the primary-surrogate keys of the dimension table of reference, even if the fact table has a natual key.
+          So in a fact table, fields that are designated as primary key (potential combination among different fileds) are also designated as foreign key 
+
+<img src="img/star_schema_dim_table.PNG" width="425"/>
+In this example *student_key* and *date_key* make up together the primary key of the *tuition_bill_fact* table and each of them by itself are designated as foreign key: *student_key* is the PK of the *student_dim* table, while *date_key* is PK of the *date_dim* table
        
     * Periodic snapshot fact tables
       * They take and record regular periodic measurements and there are 2 main types:
