@@ -4,7 +4,7 @@
 
 ## Data Warehousing general concepts 
 
-* DB and WH are not the same thing. A DW is written on top of a DB, so *usage* Vs *platform*.
+* DB and WH are not the same thing. a DW is written on top of a DB, so *usage* Vs *platform*.
   
 * DW are useful for two reasons:
     * Data once transformed are available to support data-driven decisions.
@@ -31,19 +31,20 @@ There are two different approaches to a DW architecture
 
 **2. ETL Vs ELT**
 
-* The difference between the two workflows is the order of the transformation.
+* The difference between the two workflows is the order of the transformation
     * ETL (traditional): data are loaded in their finished and transformed state
-    * ELT: Transformation capacity is increased, exploiting cloud platform. You are not committed to the hardware footprint
+    * ELT: Transformation capacity is increased, exploiting the cloud platform. You are not committed to the hardware footprint
 
 <p> <br>
  
 **3. Staging**
 
-  * First stop of a DW and landing zone of data sources. The staging layer feeds into user access layer in a form that is accessible for further work.
+  * First stop of a DW and landing zone of data sources. The staging layer feeds into user access layer in a form that is accessible for further work
 
   * Staging has one-to-one relationship with data sources (which may come from different vendors)
     
-  * Staging can be persistent Vs non-persistent (data stage layers are erased when are added to the user access layer), i.e. less storage space but potential data quality issues
+  * Staging can be persistent Vs non-persistent
+      *  non-persistent means that data stage layers are erased when are added to the user access layer. It requires less storage space but potential data quality issues
 
   *  Source data may need to be refreshed: new data, modified data, delete data. There are different approaches ( The first two are the most common):
       * Append pattern: Append on top
@@ -60,7 +61,7 @@ There are two different approaches to a DW architecture
 * Most common transformations are:
     * Data value unification (e.g. country full name and code)
     * Data type and unifications
-    * Deduplications
+    * De-duplications
     * Vertical and horizontal slicing when only certain information is relevant for analytical purposes
     * Correct potential known errors
 
@@ -73,10 +74,12 @@ There are two different approaches to a DW architecture
   
 | Facts | Dimensions |
 | -------- | ------- |
-| Numeric and quantifiable| Context and attributes of facts |
+| Numeric and quantifiable | Context and attributes of facts |
 | Measurements and metrics  | Included in dimensional tables  |
 | Included in fact tables |
 | Facts can be additive, non-additive, semi-additive |
+
+* Exmaples of non-additive facts include: margins, ratios, percentages, and averages
 
 * There are two different approaches to implement facts and dimension data: Star schema Vs Snowflake schema. Star and Snowflake schemas share
   the same dimensions but they are materialized with different dimension table representations  
@@ -95,7 +98,7 @@ There are two different approaches to a DW architecture
   * There are two fundamentals key types: (i) *Primary* Vs *Foreign* keys; (ii) *Natural* Vs *Surrogate* keys
     * Primary Key: unique identifier for each row in a BD table. Could be a single column (field) or it may require more than one field
     * Foreign Key: some 'other' table primary key. Used to indicate logical relationship helping data integration and query performances
-    * Natural & surrogate keys: Natural keys belong to the source systems, and they travel to the DW with the rest of the data. However, in DW, it is best practice to       use surrogate keysas primary/foreign keys to relate data across tables. Surrogate keys do not have business meaning and they are generated in the DW enviroment.   
+    * Natural & surrogate keys: Natural keys belong to the source systems, and they travel to the DW with the rest of the data, if they exist. However, in DW, it is best practice to use surrogate keysas primary/foreign keys to relate data across tables. Surrogate keys do not have business meaning and they are generated in the DW enviroment.   
 
 <p> <br>
 
