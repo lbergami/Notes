@@ -140,6 +140,8 @@ There are two different approaches to a DW architecture
         * However, it is created as the combination of all foreign keys relating back to dimension tables (which by definition are the primary-surrogate keys of the dimension table of reference, even if the fact table has a natual key.
           So in a fact table, fields that are designated as primary key (potential combination among different fileds) are also designated as foreign key
 
+
+
        <img src="img/fact_table_keys.PNG" width="425"/> 
 
     * Periodic snapshot fact tables
