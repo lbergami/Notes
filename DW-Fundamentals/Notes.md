@@ -96,7 +96,7 @@ There are two different approaches to a DW architecture
 * Database keys
   * They represent the logical relationships to relate data across different tables.
   * There are two fundamentals key types: (i) *Primary* Vs *Foreign* keys; (ii) *Natural* Vs *Surrogate* keys
-    * Primary Key: unique identifier for each row in a BD table, and it establishes the grain of the table.
+    * Primary Key: unique identifier for each row in a BD table, which establishes the grain of the table.
       It could be a single column (field) or it may require more than one field. 
     * Foreign Key: some 'other' table primary key. Used to indicate logical relationship helping data integration and query performances
     * Natural & surrogate keys: Natural keys belong to the source systems, and they travel to the DW with the rest of the data, if they exist. However, in DW, it is best practice to use surrogate keysas primary/foreign keys to relate data across tables.
