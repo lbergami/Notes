@@ -153,7 +153,7 @@ There are two different approaches to a DW architecture
       * They track the progress of a business process, keeping track of (i) the elapsed time spent in each phase (incl. both completed and in-progress phases), and (ii)
         other measurements as process proceeds
       * They also introduce the concept of multiple relationships from a fact table to a single dimension table
-      * Example: number of days elapsed in between each phase of a finacial aid application process 
+      * Example: number of days elapsed in between each phase of a finacial aid application process <img src="img/accumulating_snapshot_fact_tables_keys.PNG" width="425"/>
      
      * Factless tables - there are two different types:
        1. Record occurence of transactions that have no measurements:
