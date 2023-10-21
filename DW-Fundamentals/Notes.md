@@ -109,7 +109,8 @@ There are two different approaches to a DW architecture
 1. Dimension tables
     * Key DW subject areas that provides context to measurements
     * One-stop shopping for that dimensional subject
-    * *Hierarchical* dimensions (opposite of *Flat* ), is where Star and Snowflake schema distinction becomes relevent:
+    * Dimension tables can be *flat* or *Hierarchical* 
+    * For *Hierarchical* dimensions, the distinction between star and snowflake schema becomes relevant:
       * In a star schema:
         *  All dimensions along a given hierarchy is one dimension table
         *  The table includes a primary-surrogate key for the terminal dimension
@@ -139,6 +140,8 @@ There are two different approaches to a DW architecture
         * A PK is defined as unique identifier for each row in a DB table, as in a dimension table
         * However, it is created as the combination of all foreign keys relating back to dimension tables (which by definition are the primary-surrogate keys of the dimension table of reference, even if the fact table has a natual key.
           So in a fact table, fields that are designated as primary key (potential combination among different fileds) are also designated as foreign key
+
+<img src="img/star_schema_dim_table.PNG" width="425"/> &nbsp; &nbsp; <img src="img/snowflake_schema_dim_table.PNG" width="425"/> 
 
     * Periodic snapshot fact tables
       * They take and record regular periodic measurements and there are 2 main types:
