@@ -119,10 +119,6 @@ There are two different approaches to a DW architecture
         * Every non-terminal dimension has a primary-surrogate key and a next-higher level primary-surrogate key as a foreign key
         * Every terminal dimension has a primary-surrogate key but not foreign key, since there aren't further dimensions at a higher schema
 
-
-| -------- | ------- |
-| ![GitHub Logo](img/snowflake_schema_dim_table.PNG) | ![GitHub Logo](img/star_schema_dim_table.PNG) |
-
 <p float="left">
   <img src="img/snowflake_schema_dim_table.PNG" width="100" />
   <img src="img/star_schema_dim_table.PNG" width="100" /> 
