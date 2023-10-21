@@ -79,7 +79,7 @@ There are two different approaches to a DW architecture
 | Included in fact tables |
 | Facts can be additive, non-additive, semi-additive |
 
-* Exmaples of non-additive facts include: margins, ratios, percentages, and averages
+* Exaples of non-additive facts include: margins, ratios, percentages, and averages
 
 * There are two different approaches to implement facts and dimension data: Star schema Vs Snowflake schema. Star and Snowflake schemas share
   the same dimensions but they are materialized with different dimension table representations  
@@ -91,15 +91,16 @@ There are two different approaches to a DW architecture
 | Dimension tables organized as a star around fact tables | Dimension tables organized as a snowflake around fact tables |
 | Overall fewer database joins | Overall more joins required |
 | Primary & foreign key relationships straightforward | Primary & foreign key relationships more complex |
-| More storage space required: more repetitive data (denormalized approach) | less storage space required: less repetitive data (normalized approach) |
+| More storage space required: more repetitive data (denormalized approach) | Less storage space required: less repetitive data (normalized approach) |
 
 * Database keys
   * They represent the logical relationships to relate data across different tables.
   * There are two fundamentals key types: (i) *Primary* Vs *Foreign* keys; (ii) *Natural* Vs *Surrogate* keys
     * Primary Key: unique identifier for each row in a BD table, and it establishes the grain of the table.
-      Could be a single column (field) or it may require more than one field. 
+      It could be a single column (field) or it may require more than one field. 
     * Foreign Key: some 'other' table primary key. Used to indicate logical relationship helping data integration and query performances
-    * Natural & surrogate keys: Natural keys belong to the source systems, and they travel to the DW with the rest of the data, if they exist. However, in DW, it is best practice to use surrogate keysas primary/foreign keys to relate data across tables. Surrogate keys do not have business meaning and they are generated in the DW enviroment.   
+    * Natural & surrogate keys: Natural keys belong to the source systems, and they travel to the DW with the rest of the data, if they exist. However, in DW, it is best practice to use surrogate keysas primary/foreign keys to relate data across tables.
+      Surrogate keys do not have business meaning and they are generated in the DW enviroment.   
 
 <p> <br>
 
@@ -107,11 +108,16 @@ There are two different approaches to a DW architecture
 
 1. Dimension tables
     * Key DW subject areas that provides context to measurements
-    * One-stop shopping for all dimensional subjects
-    * In a snowflake schema:
-      * 1 table for each level of hierachy
-      * Every non-terminal dimension has a primary-surrogate key and a next-higher level primary-surrogate key as a foreign key
-      * Every terminal dimension has a primary-surrogate key but not foreign key, since there aren't further dimensions at a higher schema
+    * One-stop shopping for that dimensional subject
+    * *Hierarchical* dimensions (opposite of *Flat* ), is where Star and Snowflake schema distinction becomes relevent:
+      * In a star schema:
+        *  All dimensions along a given hierarchy is one dimension table
+        *  The table includes a primary-surrogate key for the terminal dimension
+        *  The table may includes the natural keys of next higher level dimensions  
+      * In a snowflake schema:
+        * 1 table for each level of hierachy
+        * Every non-terminal dimension has a primary-surrogate key and a next-higher level primary-surrogate key as a foreign key
+        * Every terminal dimension has a primary-surrogate key but not foreign key, since there aren't further dimensions at a higher schema
       
 2. Fact tables
     * There are 4 different types of fact tables, each of which is used for different purposes
