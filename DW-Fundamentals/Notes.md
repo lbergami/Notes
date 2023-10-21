@@ -123,7 +123,10 @@ There are two different approaches to a DW architecture
 | -------- | ------- |
 | ![GitHub Logo](img/snowflake_schema_dim_table.PNG) | ![GitHub Logo](img/star_schema_dim_table.PNG) |
 
-
+<p float="left">
+  <img src="img/snowflake_schema_dim_table.PNG" width="100" />
+  <img src="img/star_schema_dim_table.PNG" width="100" /> 
+</p>
 
       
 2. Fact tables
