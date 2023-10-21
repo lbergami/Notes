@@ -161,13 +161,13 @@ There are two different approaches to a DW architecture
            * Only include PK/FK columns or in some times a *tracking fact* filed - a flag with value 1
            * So they are created to *count()* the row or *sum()* the tracking values
        2. Record a particular relationship or association among multiple parties, even if no transactions actually occur
-           * Typically (but not always) between a starting and ending date or time [[ Add example ]]
+           * Typically (but not always) between a starting and ending date or time, so two relationship back to the time dimension
         
      * Compare the structure of fact tables in Star and Snwflake schemas
        * In a Star schema, we use the primary key(s) of the dimension table, which is used as foreign key into the fact table and it becomes the primary key of that specific fact table
        * In a Snowflake schema there are different approaches:
            * PK-FK linkes to every level of hierarchy ("centipede" fact tables, Kimball)
-           * Replicate the Star schema approach - You use the primary key of the lowest granular level dimension table, which bring us to next-higher level dimension tables if it is required
+           * Replicate the Star schema approach - You use the primary key of the lowest granular level dimension table, which bring us to next-higher level dimension tables if it is required, through *joins* and *group by* statements 
 
 <p> <br>
 
