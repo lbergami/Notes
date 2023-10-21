@@ -145,12 +145,15 @@ There are two different approaches to a DW architecture
         1. Fact tables that aggregate results of regular transactions (e.g. EoW account balances, starting from a daily transaction fact tables).
            These tables are created to have access to an easier version of the grained transaction fact table to answer certain types of business questions more directly 
         2. Fact tables whose levels are not related to regular transactions. These levels just exsist and can be measured
+      * Periodic snapshot fact tables are likely to define facts (measurements) that can't be added along the time dimension (semi-additive facts).
+        * You can perform other numeric operations (e.g. average)
+        *  You can "lock" the time dimension to a specific value, and **then** add value  
 
     * Accumulating snapshots
       * They track the progress of a business process, keeping track of (i) the elapsed time spent in each phase (incl. both completed and in-progress phases), and (ii)
         other measurements as process proceeds
       * They also introduce the concept of multiple relationships from a fact table to a single dimension table
-      * Example: number of days elapsed in between each phase of a finacial aid application process [[ Add picture ]]
+      * Example: number of days elapsed in between each phase of a finacial aid application process 
      
      * Factless tables - there are two different types:
        1. Record occurence of transactions that have no measurements:
