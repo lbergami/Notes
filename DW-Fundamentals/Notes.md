@@ -144,7 +144,7 @@ There are two different approaches to a DW architecture
 
 
 
-
+<p> <br>
 
     * Periodic snapshot fact tables
       * They take and record regular periodic measurements and there are 2 main types:
