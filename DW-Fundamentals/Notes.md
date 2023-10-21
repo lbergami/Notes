@@ -131,7 +131,7 @@ There are two different approaches to a DW architecture
       | Factless fact | * Record the occurrence of a transaction that has no measurements <br/> * Record coverage or eligibility relationships
 
     * Transaction-grained fact tables
-      * Literally they are the tables where we store facts from our transactions. From a formal POV, they are defined as transaction-**grained** fact tables, because at the grain that defines the fact table  
+      * Tables where we store facts from our transactions, formally defined as **grained** because they are at the grain that defines the fact table itself  
       * It is possible to store two ore more facts in the same table only if the following rules apply:
         1. Facts are avaialble at the same level of granularity (i.e. same level of detail)
         2. Facts occurr simultaneosly
