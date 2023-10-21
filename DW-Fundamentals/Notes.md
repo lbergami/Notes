@@ -120,7 +120,7 @@ There are two different approaches to a DW architecture
         * Every non-terminal dimension has a primary-surrogate key and a next-higher level primary-surrogate key as a foreign key
         * Every terminal dimension has a primary-surrogate key but not foreign key, since there aren't further dimensions at a higher schema
 
-<img src="img/dim_table_star_v_snow.PNG" width="480"/> 
+<img src="img/dim_table_star_v_snow.PNG" width="550"/> 
 
 2. Fact tables
     * There are 4 different types of fact tables, each of which is used for different purposes
@@ -147,7 +147,7 @@ There are two different approaches to a DW architecture
         2. Fact tables whose levels are not related to regular transactions. These levels just exsist and can be measured
       * Periodic snapshot fact tables are likely to define facts (measurements) that can't be added along the time dimension (semi-additive facts).
         * You can perform other numeric operations (e.g. average)
-        *  You can "lock" the time dimension to a specific value, and **then** add value  
+        * You can "lock" the time dimension to a specific value, and **then** add value  
 
     * Accumulating snapshots
       * They track the progress of a business process, keeping track of (i) the elapsed time spent in each phase (incl. both completed and in-progress phases), and (ii)
@@ -163,7 +163,11 @@ There are two different approaches to a DW architecture
        2. Record a particular relationship or association among multiple parties, even if no transactions actually occur
            * Typically (but not always) between a starting and ending date or time [[ Add example ]]
         
-     * [[ADD comparison between STAR VS SNOWFLAKE schemas fact tables ]]   
+     * Compare the structure of fact tables in Star and Snwflake schemas
+       * In a Star schema, we use the primary key(s) of the dimension table, which is used as foreign key into the fact table and it becomes the primary key of that specific fact table
+       * In a Snowflake schema there are different approaches:
+           * PK-FK linkes to every level of hierarchy ("centipede" fact tables, Kimball)
+           * Replicate the Star schema approach - You use the primary key of the lowest granular level dimension table, which bring us to next-higher level dimension tables if it is required
 
 <p> <br>
 
