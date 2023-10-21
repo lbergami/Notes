@@ -1,5 +1,7 @@
 ## Databases Demystified
 
+<p> <br>
+
 ### Introduction to databases 
 
 There are different types/paradigms of DBs, specific to different user cases; with different types of pros and cons (e.g. optimized for a specific use) 
@@ -20,6 +22,8 @@ There are different types/paradigms of DBs, specific to different user cases; wi
   * In-Memory: The entire database is loaded into RAM  (e.g. Redis, MemSQL, etc.)
   * On-Disk: DB is saved on hard-disk storage - ability to save more data, since computers tend to have more hardware space than RAM PostgreSQL, MySQL, data warehouses, etc.
 
+<p> <br>
+
 ### Analytical Vs Transactional
 
 #### Analytical workloads 
@@ -32,5 +36,21 @@ There are different types/paradigms of DBs, specific to different user cases; wi
 
 #### Transactional workloads
 
-* Manipulating one "object" at a time (e.g. user, order, patient; depending on the system)
-* 
+* Manipulating the state of one "object" at a time (e.g. user, order, patient; depending on the system)
+* Create Read Update and Delete (CRUD) operations on the object, i.e. inserting data of one object at a time or updating existing data
+* Precisely managing state with guarantees about what has or has not been written to disk
+* Supporting many operations per seconds with high throughput (i.e. unit of information a system can process in a given amount of time)
+
+<p> <br>
+
+### Row store Vs column store 
+
+* Row store Vs column store affect DBs perfomances. By changing how we store our data, we can make the DB respond to queries faster
+* But there are trade-offs here, so we want to optmize for **either** analytical or transactional workflows 
+
+
+
+
+
+
+
