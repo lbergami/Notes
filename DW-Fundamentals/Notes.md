@@ -119,7 +119,7 @@ There are two different approaches to a DW architecture
         * Every non-terminal dimension has a primary-surrogate key and a next-higher level primary-surrogate key as a foreign key
         * Every terminal dimension has a primary-surrogate key but not foreign key, since there aren't further dimensions at a higher schema
 
-<img src="img/star_schema_dim_table.PNG" width="425"/> &nbsp; <img src="img/snowflake_schema_dim_table.PNG" width="425"/> 
+<img src="img/star_schema_dim_table.PNG" width="425"/> &nbsp; &nbsp; <img src="img/snowflake_schema_dim_table.PNG" width="425"/> 
 
 2. Fact tables
     * There are 4 different types of fact tables, each of which is used for different purposes
