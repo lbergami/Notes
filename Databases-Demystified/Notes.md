@@ -46,7 +46,7 @@ There are different types/paradigms of DBs, specific to different user cases; wi
 ### Row store Vs column store 
 
 * Row store Vs column store affect DBs perfomances. By changing how we store our data, we can make the DB respond to queries faster
-* But there are trade-offs here, so we want to optmize for **either** analytical or transactional workflows 
+* Row Vs column storage have some trade-off, so we want to optmize for **either** analytical or transactional workflows 
 
 
 
