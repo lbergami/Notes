@@ -118,6 +118,11 @@ There are two different approaches to a DW architecture
         * 1 table for each level of hierachy
         * Every non-terminal dimension has a primary-surrogate key and a next-higher level primary-surrogate key as a foreign key
         * Every terminal dimension has a primary-surrogate key but not foreign key, since there aren't further dimensions at a higher schema
+
+<p float="left">
+  <img src="/img1.png" width="100" />
+  <img src="/img2.png" width="100" /> 
+</p>
       
 2. Fact tables
     * There are 4 different types of fact tables, each of which is used for different purposes
