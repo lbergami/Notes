@@ -1,4 +1,4 @@
-![image](https://github.com/lbergami/Notes/assets/83596470/741c27b8-c9cc-4eed-aa9f-24eafd782d69)# Data Warehouse fundamentals summary notes 
+# Data Warehouse fundamentals summary notes 
 
 <p> <br>
 
@@ -120,7 +120,7 @@ There are two different approaches to a DW architecture
         * Every non-terminal dimension has a primary-surrogate key and a next-higher level primary-surrogate key as a foreign key
         * Every terminal dimension has a primary-surrogate key but not foreign key, since there aren't further dimensions at a higher schema
 
-<img src="img/dim_table_star_v_snow.PNG" width="550"/> &nbsp; &nbsp; <img src="img/snowflake_schema_dim_table.PNG" width="425"/> 
+<img src="img/dim_table_star_v_snow.PNG" width="480"/> 
 
 2. Fact tables
     * There are 4 different types of fact tables, each of which is used for different purposes
