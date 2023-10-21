@@ -20,3 +20,17 @@ There are different types/paradigms of DBs, specific to different user cases; wi
   * In-Memory: The entire database is loaded into RAM  (e.g. Redis, MemSQL, etc.)
   * On-Disk: DB is saved on hard-disk storage - ability to save more data, since computers tend to have more hardware space than RAM PostgreSQL, MySQL, data warehouses, etc.
 
+### Analytical Vs Transactional
+
+#### Analytical workloads 
+
+* Processing large amounts of information for creating aggregates
+* (Almost) read-only queries: read data out of the DB 
+* Occasionally batch-write data loads, e.g. moving data from a data system to a DB / DW
+* Supporting complex queries with multiple steps of data processing, join conditions, and filtering
+* Highly variable ad-hock queries, many of which may only be run once, ever
+
+#### Transactional workloads
+
+* Manipulating one "object" at a time (e.g. user, order, patient; depending on the system)
+* 
