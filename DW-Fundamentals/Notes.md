@@ -142,6 +142,10 @@ There are two different approaches to a DW architecture
 
 <img src="img/star_schema_dim_table.PNG" width="425"/> &nbsp; &nbsp; <img src="img/snowflake_schema_dim_table.PNG" width="425"/> 
 
+
+
+
+
     * Periodic snapshot fact tables
       * They take and record regular periodic measurements and there are 2 main types:
         1. Fact tables that aggregate results of regular transactions (e.g. EoW account balances, starting from a daily transaction fact tables).
