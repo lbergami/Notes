@@ -138,8 +138,9 @@ There are two different approaches to a DW architecture
         2. Facts occurr simultaneosly
       * Primary keys for fact tables work differently from dimension tables:
         * A PK is defined as unique identifier for each row in a DB table, as in a dimension table
-        * However, it is created as the combination of all foreign keys relating back to dimension tables (which by definition are the primary-surrogate keys of the dimension table of reference, even if the fact table has a natual key.
-          So in a fact table, fields that are designated as primary key (potential combination among different fileds) are also designated as foreign key
+        * However, it is created as the combination of all foreign keys relating back to dimension tables (which by definition are the primary-surrogate keys of the dimension table of reference, even if the fact table has a natual key.So in a fact table, fields that are designated as primary key (potential combination among different fileds) are also designated as foreign key
+
+<img src="img/star_schema_dim_table.PNG" width="425"/> &nbsp; &nbsp; <img src="img/snowflake_schema_dim_table.PNG" width="425"/> 
 
     * Periodic snapshot fact tables
       * They take and record regular periodic measurements and there are 2 main types:
